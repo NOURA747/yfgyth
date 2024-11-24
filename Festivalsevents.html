@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>  مهرجان وفعاليات</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+  integrity="sha384-PvvWc10TPFsE9zQ7NtbAOSZ1VuH1fSAIRd32cI3BLld6q6jD0d5gg2a8I5hRZMAz" 
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+    integrity="sha384-uD6ziFpbWsySVPZVIV1AQ74Zq5Q6t6Z84T9b4z0k+WeHImtoE8wCk5EGyzJdEz7T" 
+    crossorigin=""></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #dee2e6;
+    }
+
+    .header_section {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ec93ee;
+      z-index: 1000;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header_section a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 0 15px;
+    }
+
+    .background-image {
+      background-image: url('img/002.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay for better readability */
+      z-index: 0;
+    }
+
+    .section-container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: -150px; /* Lift sections above footer */
+      padding: 40px 20px;
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .section:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .section img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .section h2 {
+      color: #ec93ee;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 0.9rem;
+      color: #333;
+      text-align: justify;
+    }
+
+  
+  .card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  }
+
+  </style>
+</head>
+
+<body>
+  <!-- header section starts -->
+  <header class="header_section  px-0">
+    <nav class="navbar navbar-expand-lg custom_nav-container ">
+      <a class="navbar-brand" href="index.html">
+          <img src=""  style="max-width: 150px; height: 70px;">
+        </a>
+        <a class="navbar-brand" href="index.html">
+          <img src="img/01.png" alt="مدينة الورد" style="max-width: 150px; height: 70px;">
+        </a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link nav-link1" href="UsesofTaifrose.html">رحلة الورد الطائفي</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link2" href="Uses.html">استخدامات الورد الطائفي</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link3" href="HistoryTaif.html">تاريخ الطائف</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link4" href="Culturalsignificance.html">الأهمية الثقافية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link5" href="Festivalsevents.html">مهرجانات وفعاليات موسم الورد الطائفي</a>
+            </li>
+            <li class="nav-item nav-link6">
+              <a class="nav-link" href="Arabicpoetry.html">الورد الطائفي في الشعر العربي</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- end header section -->
+  <!-- Background Image -->
+  <div class="background-image">
+    <div class="overlay"></div>
+  </div>
+
+  <!-- Sections -->
+  <div class="section-container">
+    <div class="section">
+      <h2> مهرجانات وفعاليات </h2>
+      <img src="img/002.jpeg" alt="استخدامات الورد الطائفي">
+      <p>تعد الطائف مركز الاصطياف الرسمي في السعودية منذ عهد الملك عبد العزيز بفضل مناخها المعتدل وطبيعتها البرية، إضافة إلى التراث العثماني والأسواق الشعبية. تشتهر بزراعة الورد الطائفي الذي يجذب الزوار للاستمتاع بمراحله، حيث يبدأ موسم القطف في نهاية مارس وأبريل، ويستمر 35-45 يومًا، ويُقطف صباحًا للحفاظ على عطره..</p>
+    </div>
+
+    <div class="section">
+      <h2>  بدأ مهرجان الورد الطائفي في عام ١٤٢٦ه(٢٠٠٥م) </h2>
+      <img src="img/444.jpg" alt="شاي الورد الطائفي">
+      <p>يهدف مهرجان الورد الطائفي إلى الإسهام في زيادة الحركة الاقتصادية المحلية والخارجية والشرائية،والتعريف بالورد الطائفي، و تعزيز الثقافة ، والاحتفاء بالرموز الثقافية التي تتمثل في صناعة الورد وتنشيط السياحة داخل المملكة بشكل عام ومدينة الطائف خاصة، كما يتيح المهرجان المجال للخبراء والمختصين ورواد الأعمال للالتقاء، وبحث فرص التعاون والتطوير ضمن هذا القطاع بحيث يشكل منصة تجمع المزارعين برواد العلامات التجارية. وتشهد مهرجانات الورد الطائفي .اقبالا كبيرا خصوصا في الفترة الأخيرة بسبب النهضة التي حصلت مؤخرا للملكة العربية السعودية في مجال السياحة</p>
+    </div>
+
+    <div class="section">
+        <h2>  عرض ضوئي ثلاثي الأبعاد على قصر الكعكي</h2>
+        <img src="img/0012.jpeg" alt="شاي الورد الطائفي">
+        <p> شهد قصر الكعكي عرضًا ضوئيًا ثلاثي الأبعاد يحاكي قصة ورد الطائف بشكل مبتكر، مع تخصيص توزيع إبداعي للزوار يشمل لوحات ورسوم فنية متنوعة. تميز العرض بالتركيز على جمال العمارة الحجازية، من خلال إضاءة الوجهات الأمامية، الأعمدة، العقود، والقباب الرواشين المزخرفة، مما أتاح للزوار التقاط صور تذكارية والاستمتاع بالفن والتاريخ.</p>
+      </div>
+
+    <div class="section">
+      <h2>طائف الورد تحقق رقماً قياسياً في موسوعة غينيس</h2>
+      <img src="img/007.jpeg" alt="مربى الورد الطائفي">
+      <p>في 16 مايو 2022، دخلت سلَّة مهرجان طائف الورد موسوعة غينيس للأرقام القياسية كأكبر سلَّة ورد في العالم، متفوقة على السلة السنغافورية لعام 2018. ضمت السلة 84,450 وردة، بارتفاع 1.29 متر وعرض 7.98 متر، واستغرق بناؤها أكثر من 168 ساعة بمشاركة 190 شابًا وشابة من الطائف. استخدمت مواد قابلة لإعادة التدوير في تصنيع السلة، التي شملت 26 نوعًا من أجود الورود.
+      </p>
+    </div>
+  </div>
+
+  <div class="preparation-section" style="background-color: #f8f9fa; padding: 40px 20px; margin-top: 20px;">
+    <h2 style="text-align: center; color: #ec93ee; margin-bottom: 30px;">الفعاليات </h2>
+  <div class="section-container" style="margin-top: 5px;">
+    <div class="section">
+      <h2> فعالية أكبر سجادة زهور في مهرجان الورد الطائفي </h2>
+      <img src="img/004.jpeg" alt="استخدامات الورد الطائفي">
+      <p>تحتفل الطائف بزراعة الورد الطائفي من خلال مهرجان الورد، ويشمل "أكبر سجادة زهور" التي تمتد على 5206 أمتار مربعة، باستخدام مليون شتلة زهور متنوعة. تم تصميم السجادة بنقوش زخرفية مستوحاة من تراث الطائف، وجذبت أنظار الزوار الذين تجمعوا لمشاهدتها من زوايا مختلفة حول البحيرة والجسر العلوي.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>  تغيير اسم مهرجان الورد الطائفي إلى "موسم الورد"</h2>
+      <img src="img/003.jpg" alt=" الورد الطائفي">
+      <p>قررت أمانة الطائف تغيير اسم مهرجان الورد الطائفي إلى "موسم الورد" بعد أكثر من 15 عاماً من إطلاق الاسم الأول. وأوضح أمين الطائف، الدكتور أحمد عزيز القثامي، أن الورد يعد المنتج الأول للمحافظة التي تضم أكثر من 860 مزرعة ورد. بدأ تنظيم فعاليات "طائف الورد" منذ عام 2021 بالتعاون مع وزارة الثقافة وأمانة الطائف.</p>
+    </div>
+
+    <div class="section">
+        <h2> فعالية "قرية الورد" تجربة فريدة لحكاية صناعة الورد الطائفي</h2>
+        <img src="img/005.jpeg" alt=" الورد الطائفي">
+        <p> تسرد "قرية الورد" حكاية صناعة الورد الطائفي بطريقة مبتكرة، حيث يستقبل الزوار بالترحاب وتقديم القهوة الممزوجة بطعم الورد. وتملأ مجسمات الورد جنبات القرية، إضافة إلى العديد من الفعاليات المميزة مثل العروض البهلوانية والسيرك، فضلاً عن الأكلات الشعبية المزينة بالورد.</p>
+      </div>
+
+      <div class="section">
+        <h2>ملتقى مهرجان طائف الورد: منصة لترويج الورد الطائفي عالميًا</h2>
+        <img src="img/0015.jpg" alt=" الورد الطائفي">
+        <p>أطلقت وزارة الثقافة "ملتقى مهرجان طائف الورد" في فندق انتركونتننتال بالطائف تحت شعار "الورد من الطائف إلى العالم"، بهدف خلق منصة تجمع المزارعين برواد العلامات التجارية، ضمن جهود السعودية لتحقيق رؤية 2030</p>
+      </div>
+      <div class="section">
+        <h2>هاكاثون الورد الطائفي</h2>
+        <p>تحدي تقني يقام في الطائف لمدة 5 أيام ويهدف إلى دعم الابتكار وريادة الأعمال في الطائف عبر تطوير حلول تقنية تعزز من صناعة الورد الطائفي، كما يصاحب الحدث ع ّدة ورش عمل مهارية وتقنية،وتهتم في مسار تجارة الورد يهدف هذا المسار إلى بناء مشاريع تساهم في تطوير تجارة وصناعة الورد الطائفي وتعزيز ارتباطه بقطاعات أخرى ومسار الارث الثقافي يهدف هذا المسار الى تنمية تراث صناعة الورد وتعزيز ارتباطه بالهوية الثقافية لمدينة الطائف ومسار التجارب السياحية يهدف هذا المسار الى تعزيز ربط التجارب السياحية في الطائف مع الورد الطائفي وتقدم جوائز تصل الى22 الف .ريال</p>
+      </div>
+      </div>
+</div>
+ 
+<div class="map-section" style="margin-top: 40px; text-align: center;">
+  <h3 style="color: #ec93ee; margin-bottom: 20px; font-size: 24px;">خريطة  الطائف</h3>
+  <iframe 
+      width="80%" 
+      height="450" 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.7654901982924!2d40.39220482572485!3d21.282291162715557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3ce77a6e8dddf%3A0x60f4a8dc41f67447!2z2KzYp9mF2KfZgyDZhtmI2LEg2KfZhNio2YrZhtmK2YHYp9mE2KrYr9in2YY!5e0!3m2!1sar!2ssa!4v1700000000000" 
+      title="خريطة مزارع الورد الطائفي"
+      frameborder="0" 
+      style="border: 0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" 
+      allowfullscreen>
+  </iframe>
+</div>
+
+
+  
+  <footer style="background-color: #ec93ee; color: white; padding: 20px 0; margin-top: 20px;">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h4> المصادر</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="#" style="color: white; text-decoration: none;">جريدة الرياض</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;"> جريدة الوطن</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">قناة السعودية</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;"> وكالة الانباء السعودية</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">   صحيفة عكاظ</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;"> هيا اونلاين  </a></li>
+
+
+          </ul>
+        </div>
+  
+</body>
+
+</html>
